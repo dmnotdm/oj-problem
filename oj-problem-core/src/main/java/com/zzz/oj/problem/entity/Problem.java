@@ -9,6 +9,9 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created by zhizhao.zhang on 2019/04/04 03:28.
@@ -18,6 +21,9 @@ import javax.persistence.Enumerated;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 public class Problem extends OJEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     @Enumerated(EnumType.STRING)
     private ProblemStatus status;
