@@ -37,7 +37,7 @@
     <!-- @formatter:on -->
 
     <properties>
-        <mainClass>com.zzz.oj.UserApplication</mainClass>
+        <mainClass>com.zzz.oj.ProblemApplication</mainClass>
     </properties>
 
 </project>
