@@ -1,0 +1,20 @@
+CREATE TABLE `problem` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `title` varchar(40) NOT NULL DEFAULT '' COMMENT '标题',
+  `status` varchar(10) NOT NULL DEFAULT '' COMMENT '状态',
+  `is_oi_type` tinyint(1) DEFAULT '0' COMMENT '是否是oi模式',
+  `submit_num` bigint(20) NOT NULL DEFAULT '0' COMMENT '提交数',
+  `accept_num` bigint(20) NOT NULL DEFAULT '0' COMMENT '通过数',
+  `content` text COMMENT '题目正文',
+  `input_des` text COMMENT '输入描述',
+  `output_des` text COMMENT '输出描述',
+  `source` varchar(200) DEFAULT NULL COMMENT '来源',
+  `tips` varchar(100) DEFAULT NULL COMMENT '提示',
+  `time_limit` bigint(20) NOT NULL COMMENT '时间限制',
+  `memory_limit` bigint(20) NOT NULL COMMENT '内存限制',
+  `language` bigint(20) NOT NULL DEFAULT '0' COMMENT '语言(二进制表示)',
+  `create_time` bigint(20) NOT NULL COMMENT '创建时间戳',
+  `update_time` bigint(20) NOT NULL COMMENT '更新时间戳',
+  PRIMARY KEY (`id`),
+  KEY `title_index` (`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

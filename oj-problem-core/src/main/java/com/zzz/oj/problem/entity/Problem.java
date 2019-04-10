@@ -6,6 +6,8 @@ import com.zzz.oj.problem.enums.ProblemStatus;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import org.springframework.util.StringUtils;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -27,7 +29,7 @@ public class Problem extends OJEntity {
     private String title;
     @Enumerated(EnumType.STRING)
     private ProblemStatus status;
-    private Boolean isOIType;
+    private Boolean isOiType;
     private Long submitNum;
     private Long acceptNum;
     private String content;
@@ -40,5 +42,10 @@ public class Problem extends OJEntity {
     private Long timeLimit;
     private Long memoryLimit;
     private Long language;
+
+    @Override
+    public boolean isInvalid() {
+        return StringUtils.isEmpty(title) || status == null;
+    }
 }
 
