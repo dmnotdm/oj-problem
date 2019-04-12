@@ -15,6 +15,8 @@ CREATE TABLE `problem` (
   `language` bigint(20) NOT NULL DEFAULT '0' COMMENT '语言(二进制表示)',
   `create_time` bigint(20) NOT NULL COMMENT '创建时间戳',
   `update_time` bigint(20) NOT NULL COMMENT '更新时间戳',
+  `creator_id` bigint(20) NOT NULL,
+  `creator_name` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `title_index` (`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

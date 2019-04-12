@@ -42,6 +42,8 @@ public class Problem extends OJEntity {
     private Long timeLimit;
     private Long memoryLimit;
     private Long language;
+    private String creatorId;
+    private String creatorName;
 
     @Override
     public boolean isInvalid() {
